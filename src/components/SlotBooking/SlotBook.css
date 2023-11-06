@@ -1,0 +1,169 @@
+
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: #f3f3f3; */
+    margin: 0;
+    padding: 0;
+    background-image: url("https://wallpaper-house.com/data/out/8/wallpaper2you_262369.jpg"),
+      radial-gradient(ellipse, #0000, #0007);
+  
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-image: linear-gradient(to right, red , yellow); */
+  }
+.container-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background-color: #f0f0f0; */
+  }
+  
+  .container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* width: 40%; */
+    width: 600px;
+    background: linear-gradient(to bottom, #82addb 0%,#ebb2b1 100%); 
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b0bdc5;
+    height: 100%;
+  }
+  
+  h4 {
+    margin-left: 12px;
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  #logout-button {
+    background-color: #d93232;
+    margin-right: 20px;
+    width: 80px;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  #logout-button:hover {
+    background-color: #2F4F4F;
+  }
+  
+  #heading {
+    font-size: 34px;
+    margin-top: 8px;
+    text-shadow: 0 0 3px #ffffff, 0 0 5px rgb(18, 243, 232); 
+
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  .input {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="date"],
+  input[type="time"],
+  select {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background: transparent;
+  }
+  
+  #button {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow:  5px 10px 8px #888888;
+
+
+  }
+  
+  #submit:hover {
+    background-color: #0056b3;
+  }
+  
+  #bookings {
+    margin-top: 20px;
+  }
+  
+  h3 {
+    font-size: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  #cancel-button {
+    background-color: #d93232;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  #noData{
+    color: white;
+  }
+  
+  #cancel-button:hover {
+    background-color: #2F4F4F;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      max-width: 90%;
+    }
+  
+    h4 {
+      font-size: 16px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  }
+  
+  
