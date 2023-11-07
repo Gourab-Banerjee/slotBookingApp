@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import swal from "sweetalert2";
+import bcrypt from "bcryptjs";
 
 const LogIn = () => {
   const navigate = useNavigate();
@@ -50,14 +51,15 @@ const LogIn = () => {
   };
 
   const handleLogin = (e) => {
+    const {email,password}=loginData
     e.preventDefault();
     if (Object.keys(loginErrors).length === 0) {
       // Find the user by email in the userList
-      const user = userList.find((user) => user.email === loginData.email);
+      const user = userList.find((user) => user.email === email);
 
       if (user) {
         // Check if the password matches
-        if (user.password === loginData.password) {
+        if  (bcrypt.compareSync(password, user.password)) {
           // Login successful
           swal.fire("Login successful!");
           localStorage.setItem("loggedinUserList", JSON.stringify(loginData));

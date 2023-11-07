@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100%;
     /* background-color: #f0f0f0; */
   }
   
@@ -163,6 +163,20 @@ body {
   
     h2 {
       font-size: 20px;
+    }
+  }
+  @media (max-width:350px){
+    .container{
+      padding: 15px
+    }
+    table{
+      width: 90%;
+    }
+    th,td{
+      font-size: 12px;
+    }
+    #cancel-button{
+      font-size:10px ;
     }
   }
   

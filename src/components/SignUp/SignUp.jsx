@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import "./Signup.css";
 import swal from "sweetalert2";
+import bcrypt from "bcryptjs";
+
+// const salt = bcrypt.genSaltSync(10);
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -25,12 +27,11 @@ const SignUp = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-   
+
     const validationErrors = { ...errors };
 
     if (name === "username") {
-      
-      const namePattern = /^[a-zA-Z\s]+$/; 
+      const namePattern = /^[a-zA-Z\s]+$/;
       // Only alphabetic characters and spaces allowed
       if (value.length < 3) {
         validationErrors.username = "Username must be at least 3 characters";
@@ -63,10 +64,9 @@ const SignUp = () => {
           "phone number should only contain neumerical characters";
       } else if (!phoneNoRegex.test(value)) {
         validationErrors.phone = "phone number is not valid";
-      }else if(!phoneRegex.test(value)){
-        validationErrors.phone ="phone number should contain exactly 10 digit"
-      }
-       else {
+      } else if (!phoneRegex.test(value)) {
+        validationErrors.phone = "phone number should contain exactly 10 digit";
+      } else {
         delete validationErrors.phone;
       }
     } else if (name === "password") {
@@ -100,7 +100,22 @@ const SignUp = () => {
 
     // Check if there are any validation errors
     if (Object.keys(errors).length === 0) {
-      const newUserList = [...userList, formData];
+      const password = formData.password;
+      const hashedPassword = bcrypt.hashSync(
+        password,
+        "$2a$10$CwTycUXWue0Thq9StjUM0u"
+      );
+      // formData.password=hashedPassword
+
+      const newUserList = [
+        ...userList,
+        {
+          username: formData.username,
+          email: formData.email,
+          phone: formData.phone,
+          password: hashedPassword,
+        },
+      ];
       const newUsername = formData.username;
 
       // Save the updated user list to local storage
